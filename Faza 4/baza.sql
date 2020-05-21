@@ -1,3 +1,53 @@
+
+CREATE TABLE [IstorijaKupovine]
+( 
+	[id_istorija]        integer  NOT NULL ,
+	[id_korisnik]        integer  NOT NULL ,
+	[id_proizvod]        integer  NOT NULL ,
+	[cena]               integer  NULL ,
+	[datum]              datetime  NULL ,
+	CONSTRAINT [XPKIstorijaKupovine] PRIMARY KEY  CLUSTERED ([id_istorija] ASC)
+)
+go
+
+CREATE TABLE [Korisnik]
+( 
+	[id_korisnik]        integer  NOT NULL ,
+	[ime]                varchar(25)  NULL ,
+	[prezime]            varchar(25)  NULL ,
+	[email]              varchar(50)  NULL ,
+	[sifra]              varchar(20)  NULL ,
+	[isAdmin]            bit  NULL ,
+	CONSTRAINT [XPKKorisnik] PRIMARY KEY  CLUSTERED ([id_korisnik] ASC)
+)
+go
+
+CREATE TABLE [Korpa]
+( 
+	[id_korisnik]        integer  NOT NULL ,
+	[id_proizvod]        integer  NOT NULL ,
+	[id_korpa]           integer  NOT NULL ,
+	[cena]               integer  NULL ,
+	[is_active]          bit  NULL ,
+	CONSTRAINT [XPKKorpa] PRIMARY KEY  CLUSTERED ([id_korpa] ASC)
+)
+go
+
+CREATE TABLE [Kupac]
+( 
+	[id_korisnik]        integer  NOT NULL ,
+	CONSTRAINT [XPKKupac] PRIMARY KEY  CLUSTERED ([id_korisnik] ASC)
+)
+go
+
+CREATE TABLE [Prodavac]
+( 
+	[id_korisnik]        integer  NOT NULL ,
+	CONSTRAINT [XPKProdavac] PRIMARY KEY  CLUSTERED ([id_korisnik] ASC)
+)
+go
+
+CREATE TABLE [Proizvod]
 ( 
 	[id_proizvod]        integer  NOT NULL ,
 	[naziv]              char(18)  NULL ,
