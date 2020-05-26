@@ -1,11 +1,13 @@
 <?php namespace App\Controllers;
 
 use App\Models\KorisnikModel;
+use App\Models\ProizvodModel;
 
 class Home extends BaseController
 {
         
         protected function showPage($page, $data = []){
+            $data['kontroler'] = 'Home';
             echo view('Sablon/gostHeader');
             echo view($page, $data);
             echo view('Sablon/footer');
@@ -15,6 +17,34 @@ class Home extends BaseController
 	{
             $this->showPage('index');
 	}
+        
+        public function katalog() {
+            $proizvodModel = new ProizvodModel();
+            $proizvodi = $proizvodModel->findAll();
+            $this->showPage('katalog',['proizvodi'=>$proizvodi]);
+        }
+        
+        public function kupi($id_proizvod) {
+            echo $id_proizvod;
+        }
+
+
+        public function radnje($location = "") {
+            $data = [];
+            if($location == "" || $location == "1"){
+                $location = $this->getRadnja_1();
+            }else if($location == "2"){
+                $location = $this->getRadnja_2();
+            }else{
+                $location = $this->getRadnja_3();
+            }
+            $data['radnja'] = $location;
+            $this->showPage('radnje',$data);
+        }
+        
+        public function about(){
+            $this->showPage('about');
+        }
         
         public function goLogin($poruka = null){
             $this->showPage('login', ['poruka'=>$poruka]);
@@ -31,7 +61,12 @@ class Home extends BaseController
             if($korisnik == null){
                 return $this->goLogin('Ne postoji korisnik sa unetim podacima!');
             }else{
-                return redirect()->to(site_url('Korisnik'));
+                if($korisnik->isAdmin == true){
+                    return redirect()->to(site_url('Admin'));
+                }else{
+                    return redirect()->to(site_url('Korisnik'));
+                }
+                
             }    
         }
         

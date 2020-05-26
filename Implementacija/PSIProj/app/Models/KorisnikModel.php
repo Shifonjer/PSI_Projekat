@@ -31,15 +31,22 @@ class KorisnikModel extends Model{
     }
     
     public function registerKorisnik($korisnik){
-            if($this->getKorisnik($korisnik['email']) == null){
-                $this->save($korisnik);
-                return true;
-            }
-            else {
-                return false;
-            }
+        if($this->getKorisnik($korisnik['email']) == null){
+            $this->save($korisnik);
+            return true;
         }
-    
+        else {
+            return false;
+        }
+    }
+
+    public function updateStatus($id, $status){
+        $builder = $this->builder();
+        $data = ['isAdmin' => $status];
+        $builder->where('id_korisnik',$id);
+        $builder->set($data);
+        $builder->update();
+    }
     protected function getKorisnik($email){
         $korisnik = $this->where('email', $email)->first();
         return $korisnik;

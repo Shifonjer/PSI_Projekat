@@ -26,6 +26,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Home')?>">Pocetna</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Home/katalog')?>">Katalog</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Home/radnje')?>">Radnje</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Home/about')?>">O nama</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Home/goLogin')?>">Login</a></li>

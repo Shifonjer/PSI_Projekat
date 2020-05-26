@@ -27,7 +27,11 @@ class BaseController extends Controller
 	 * @var array
 	 */
 	protected $helpers = [];
-
+        
+        const RADNJA_1 = "https://maps.google.com/maps?q=Beograd%2C%20Milutina%20Milankovica%2021&t=&z=13&ie=UTF8&iwloc=&output=embed";
+        const RADNJA_2 = "https://maps.google.com/maps?q=Beograd%2C%20Ustanicka%2015&t=&z=13&ie=UTF8&iwloc=&output=embed";
+        const RADNJA_3 = "https://maps.google.com/maps?q=Obrenovac%2C%20Vuka%20Karadzica%2099&t=&z=13&ie=UTF8&iwloc=&output=embed";
+        
 	/**
 	 * Constructor.
 	 */
@@ -42,5 +46,17 @@ class BaseController extends Controller
 		// E.g.:
 		$this->session = \Config\Services::session();
 	}
+        
+        public function getRadnja_1() {
+            return self::RADNJA_1;
+        }
+        
+        public function getRadnja_2() {
+            return self::RADNJA_2;
+        }
+        
+        public function getRadnja_3() {
+            return self::RADNJA_3;
+        }
 
 }
