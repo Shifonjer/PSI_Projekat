@@ -25,9 +25,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik')?>">Pocetna</a></li>
-                <li class="nav-item"><a class="nav-link" href="korpa.html">Katalog</a></li>
-                <li class="nav-item"><a class="nav-link" href="korpa.html">Korpa</a></li>
-                <li class="nav-item"><a class="nav-link" href="istorija.html">Istorija kupovine</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/katalog')?>">Katalog</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/korpa')?>">Korpa</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/istorija')?>">Istorija kupovine</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/radnje')?>">Radnje</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/about')?>">O nama</a></li>
             </ul>

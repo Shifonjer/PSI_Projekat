@@ -15,18 +15,17 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-fixed-top bg-dark">
-        <a class="navbar-brand" href="<?php echo site_url('Admin')?>">Ime sajta</a>
+        <a class="navbar-brand" href="<?php echo site_url('Prodavac')?>">Ime sajta</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin')?>">Pocetna</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/katalog')?>">Katalog</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/dodavanje')?>">Dodavanje proizvoda</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/korisnici')?>">Korisnici</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/radnje')?>">Radnje</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/about')?>">O nama</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac')?>">Pocetna</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/katalog')?>">Katalog</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/dodavanje')?>">Dodavanje proizvoda</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/radnje')?>">Radnje</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/about')?>">O nama</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/logout')?>">Logout</a></li>

@@ -13,6 +13,7 @@
  */
 
 use CodeIgniter\Model;
+use App\Models\KupacModel;
 
 class KorisnikModel extends Model{
     
@@ -32,7 +33,9 @@ class KorisnikModel extends Model{
     
     public function registerKorisnik($korisnik){
         if($this->getKorisnik($korisnik['email']) == null){
-            $this->save($korisnik);
+            $id = $this->insert($korisnik);
+            $kupacModel = new KupacModel();
+            $kupacModel->dodaj($id);
             return true;
         }
         else {
@@ -47,6 +50,7 @@ class KorisnikModel extends Model{
         $builder->set($data);
         $builder->update();
     }
+
     protected function getKorisnik($email){
         $korisnik = $this->where('email', $email)->first();
         return $korisnik;

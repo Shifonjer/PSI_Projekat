@@ -21,20 +21,26 @@
                                 </tr>";
                            echo "<tr>
                                     <td>
-                                        <h6><strong>Cena:</strong></h6>
+                                        <h6><strong>Cena: </strong></h6>
                                     </td>
                                 </tr>";
                            echo "<tr>
                                     <td>
-                                        <h6><strong>{$proizvod->cena}</strong></h6>
+                                        <h6><strong>{$proizvod->cena} din.</strong></h6>
                                     </td>
                                 </tr>";
-                            echo "<tr><td>";
-                            echo "<a class='btn btn-success btn-lg' href='";
-                            echo site_url("Home/kupi/$proizvod->id_proizvod");
-                            echo "' role='button'>Kupi</a>
-                                    </td>
-                                </tr>";            
+                            if($kupi == true){
+                                if($proizvod->kolicina > 0){
+                                    echo "<tr><td>";
+                                    echo "<a class='btn btn-success btn-lg' href='";
+                                    echo site_url("Korisnik/kupi/$proizvod->id_proizvod");
+                                    echo "' role='button'>Kupi</a></td></tr>";
+                                }else{
+                                    echo "<tr><td style='color:red;'>Proizvod trenutno nije dostupan!</td></tr>";
+                                }
+                            }else{
+                                echo "<tr><td style='color:red;'>Ulogujte se kao kupac da bi kupili ovaj proizvod!</td></tr>";
+                            }
                         }
                         ?>
                 </table>

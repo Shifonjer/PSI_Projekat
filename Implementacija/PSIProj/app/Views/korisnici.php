@@ -27,7 +27,9 @@
                             if($korisnik->isAdmin){
                                 echo "<td>".anchor("Admin/ukloniAdmina/{$korisnik->id_korisnik}", "Ukloni admina")."</td></tr>";
                             }else{
-                                echo "<td>".anchor("Admin/obrisi/{$korisnik->id_korisnik}", "Obrisi")."</td>";
+                                echo "<td><a class='btn btn-danger btn-lg' href='";
+                                echo site_url("Admin/obrisi/{$korisnik->id_korisnik}");
+                                echo "' role='button'>Obrisi</a></td>";
                                 echo "<td>".anchor("Admin/postaviAdmina/{$korisnik->id_korisnik}", "Postavi za admina")."</td></tr>";
                             }
                         }

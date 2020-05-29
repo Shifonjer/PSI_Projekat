@@ -1,6 +1,8 @@
 <?php namespace App\Controllers;
 
 use App\Models\KorisnikModel;
+use App\Models\KupacModel;
+use App\Models\ProdavacModel;
 use App\Models\ProizvodModel;
 
 class Home extends BaseController
@@ -21,14 +23,9 @@ class Home extends BaseController
         public function katalog() {
             $proizvodModel = new ProizvodModel();
             $proizvodi = $proizvodModel->findAll();
-            $this->showPage('katalog',['proizvodi'=>$proizvodi]);
+            $this->showPage('katalog',['proizvodi'=>$proizvodi, 'kupi'=>false]);
         }
         
-        public function kupi($id_proizvod) {
-            echo $id_proizvod;
-        }
-
-
         public function radnje($location = "") {
             $data = [];
             if($location == "" || $location == "1"){
@@ -57,16 +54,23 @@ class Home extends BaseController
         public function login(){
 
             $korisnikModel = new KorisnikModel();
+            $kupacModel = new KupacModel();
             $korisnik = $korisnikModel->loginKorisnik($this->request->getVar('email'), $this->request->getVar('password'));
             if($korisnik == null){
                 return $this->goLogin('Ne postoji korisnik sa unetim podacima!');
             }else{
                 if($korisnik->isAdmin == true){
+                    
                     return redirect()->to(site_url('Admin'));
                 }else{
-                    return redirect()->to(site_url('Korisnik'));
+                    $this->session->set('korisnik',$korisnik);
+                    $kupac = $kupacModel->dohvati($korisnik->id_korisnik);
+                    if($kupac !=null){
+                        return redirect()->to(site_url('Korisnik'));
+                    }else{
+                        return redirect()->to(site_url('Prodavac'));
+                    }
                 }
-                
             }    
         }
         

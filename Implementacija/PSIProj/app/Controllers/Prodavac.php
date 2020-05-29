@@ -3,25 +3,20 @@
 use App\Models\KorisnikModel;
 use App\Models\ProizvodModel;
 
-class Admin extends BaseController
+class Prodavac extends BaseController
 {
     
         protected function showPage($page, $data = []){
-            $data['kontroler'] = 'Admin';
-            echo view('Sablon/adminHeader');
+            $data['kontroler'] = 'Prodavac';
+            echo view('Sablon/prodavacHeader');
             echo view($page, $data);
             echo view('Sablon/footer');
         }
         
-        protected function vratiKorisnike() {
-            $korisnikModel = new KorisnikModel();
-            $korisnici = $korisnikModel->findAll();
-            $this->showPage('korisnici',['korisnici'=>$korisnici]);
-        }
-        
         protected function vratiProizvode() {
             $proizvodModel = new ProizvodModel();
-            $proizvodi = $proizvodModel->findAll();
+            $korisnik = $this->session->get('korisnik');
+            $proizvodi = $proizvodModel->dohvatiMojeProizvode($korisnik->id_korisnik);
             return $proizvodi;
         }
 
@@ -63,28 +58,6 @@ class Admin extends BaseController
         public function about(){
             $this->showPage('about');
         }
-        
-        public function korisnici() {
-            
-            $this->vratiKorisnike();
-        }
 
-        public function obrisi($id) {
-            $korisnikModel = new KorisnikModel();
-            $korisnikModel->where('id_korisnik',$id)->delete();
-            $this->vratiKorisnike();
-        }
-        
-        public function postaviAdmina($id) {
-            $korisnikModel = new KorisnikModel();
-            $korisnikModel->updateStatus($id, true);
-            $this->vratiKorisnike();
-        }
-        
-        public function ukloniAdmina($id) {
-            $korisnikModel = new KorisnikModel();
-            $korisnikModel->updateStatus($id, false);
-            $this->vratiKorisnike();
-        }
 }
 
