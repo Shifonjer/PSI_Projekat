@@ -1,3 +1,8 @@
+<!doctype html>
+<!--
+ #Autor: Mina Jankovic
+-->
+
 <div class="container">
         <div class="row">
             <div>

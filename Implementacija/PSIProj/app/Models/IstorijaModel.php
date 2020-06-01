@@ -1,15 +1,8 @@
 <?php namespace App\Models;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of IstorijaModel
- *
- * @author necah
+ * #Autori: Petar Kolic
+ * Model za tabelu istorijakupovine
  */
 
 use CodeIgniter\Model;
@@ -21,7 +14,8 @@ class IstorijaModel extends Model{
     protected $returnType = 'object';
     protected $allowedFields = ['id_proizvod','id_korisnik','ime_proizvoda','cena','datum'];
     
-    
+    //Dodavanje proizvoda u bazu
+    //@param array $proizvodi
     public function dodaj($proizvodi){
         foreach ($proizvodi as $proizvod){
             $data = array(
@@ -35,12 +29,18 @@ class IstorijaModel extends Model{
         }
     }
     
+    //Vracanje istorije od ulogovanog korisnika
+    //@param int $id_korisnik
+    //@return Object $istorija
     public function vratiMoje($id_korisnik) {
         $this->where('id_korisnik', $id_korisnik);
         $istorija = $this->findAll();
         return $istorija;
     }
     
+    //Funkcija za racunanje ukupne cene istorije.
+    //@param int $id_korisnik
+    //@return int $ukupno
     public function ukupnaCena($id_korisnik) {
         $proizvodi = $this->vratiMoje($id_korisnik);
         $ukupno = 0;

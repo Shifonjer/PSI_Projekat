@@ -1,5 +1,8 @@
 <?php namespace App\Controllers;
 
+// #Autori: Nemanja Maksimovic, Mina Jankovic
+// Kontroler koji obradjuje funkcionalnosti dostupne gostu
+
 use App\Models\KorisnikModel;
 use App\Models\KupacModel;
 use App\Models\ProdavacModel;
@@ -7,7 +10,10 @@ use App\Models\ProizvodModel;
 
 class Home extends BaseController
 {
-        
+        //Funkcija koja sluzi za prikaz stranice. 
+        //Kao parametri prosledjuje se ime stranice kao i podaci koji su potrebni u samoj stranici.
+        // @param String $page, array $data
+        // @return void
         protected function showPage($page, $data = []){
             $data['kontroler'] = 'Home';
             echo view('Sablon/gostHeader');
@@ -15,17 +21,24 @@ class Home extends BaseController
             echo view('Sablon/footer');
         }
         
+        //Index funkcija koja samo poziva showPage funkciju.
+        // @return void
 	public function index()
 	{
             $this->showPage('index');
 	}
         
+        //Prikaz kataloga sa svim postojecim proizvodima u bazi.
+        // @return showPage
         public function katalog() {
             $proizvodModel = new ProizvodModel();
             $proizvodi = $proizvodModel->findAll();
             $this->showPage('katalog',['proizvodi'=>$proizvodi, 'kupi'=>false]);
         }
         
+        //Funkcija koja prikazuje stranicu radnje 
+        //koja takodje menja izabranu lokaciju na mapi u zavisnosti od izabrane lokacije.
+        // @return void
         public function radnje($location = "") {
             $data = [];
             if($location == "" || $location == "1"){
@@ -39,18 +52,29 @@ class Home extends BaseController
             $this->showPage('radnje',$data);
         }
         
+        //Prikaz about stranice.
+        // @return void
         public function about(){
             $this->showPage('about');
         }
         
+        //Prikaz login stranice.
+        // @param String $poruka
+        // @return void
         public function goLogin($poruka = null){
             $this->showPage('login', ['poruka'=>$poruka]);
         }
         
+        //Prikaz stranice za registraciju.
+        // @param String $poruka
+        // @return void
         public function goRegister($poruka = null){
             $this->showPage('register', ['poruka'=>$poruka]);
         }
         
+        //Funkcija koja vrsi autorizaciju korisnika.
+        //U zavisnosti od unetih podataka korisnik se preusmerava na odgovarajucu stranicu.
+        // @return redirect
         public function login(){
 
             $korisnikModel = new KorisnikModel();
@@ -74,6 +98,8 @@ class Home extends BaseController
             }    
         }
         
+        //Funkcija koja obradjuje registraciju korisnika sa validacijom unetih podataka i njihovim unosom u bazu.
+        // @return redirect
         public function register(){
                 $korisnik = array(
                     'ime' => $this->request->getVar('ime'),

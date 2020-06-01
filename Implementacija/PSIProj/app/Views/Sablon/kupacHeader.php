@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
- #Autor: Nemanja Maksimovic
+ #Autor: Petar Kolic
 -->
 <head>
     <meta charset="utf-8">

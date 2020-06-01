@@ -1,3 +1,8 @@
+<!doctype html>
+<!--
+ #Autor: Mina Jankovic
+-->
+
 <div style="text-align: center">
     <h1>Nase radnje: </h1>
     <?php 

@@ -1,15 +1,8 @@
 <?php namespace App\Models;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of KorisnikModel
- *
- * @author necah
+ * #Autori: Nemanja Maksimovic
+ * Model za tabelu korisnik
  */
 
 use CodeIgniter\Model;
@@ -22,6 +15,9 @@ class KorisnikModel extends Model{
     protected $returnType = 'object';
     protected $allowedFields = ['ime','prezime','email','sifra','isAdmin'];
     
+    //Funkcija koja pretrazuje korisnika u bazi za date podatke.
+    //@param String $email, String $password
+    // @return Object
     public function loginKorisnik($email,$password){
         $korisnik = $this->getKorisnik($email);
         if($korisnik != null && $korisnik->sifra == $password){
@@ -31,6 +27,9 @@ class KorisnikModel extends Model{
         }
     }
     
+    //Funkcija koja upisuje korisnika u bazu.
+    //@param object $korisnik
+    // @return boolean
     public function registerKorisnik($korisnik){
         if($this->getKorisnik($korisnik['email']) == null){
             $id = $this->insert($korisnik);
@@ -42,7 +41,9 @@ class KorisnikModel extends Model{
             return false;
         }
     }
-
+    
+    //Funkcija za promenu admin prava korisnika
+    //@param int $id, boolean $status
     public function updateStatus($id, $status){
         $builder = $this->builder();
         $data = ['isAdmin' => $status];
@@ -51,6 +52,10 @@ class KorisnikModel extends Model{
         $builder->update();
     }
 
+    
+    //Funkcija koja vraca korisnika sa datim emailom
+    //@param String $email
+    //@return Object
     protected function getKorisnik($email){
         $korisnik = $this->where('email', $email)->first();
         return $korisnik;

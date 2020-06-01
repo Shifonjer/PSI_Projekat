@@ -1,3 +1,8 @@
+<!doctype html>
+<!--
+ #Autor: Petar Kolic
+-->
+
 <div class="container">
         <div class="row">
             <div>

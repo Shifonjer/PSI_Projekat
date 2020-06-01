@@ -1,3 +1,8 @@
+<!doctype html>
+<!--
+ #Autor: Nemanja Maksimovic
+-->
+
 <div class="container">
         <div class="row">
             <div>

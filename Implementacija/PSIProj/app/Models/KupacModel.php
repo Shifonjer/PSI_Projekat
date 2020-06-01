@@ -1,15 +1,8 @@
 <?php namespace App\Models;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of KupacModel
- *
- * @author necah
+ * #Autori: Nemanja Maksimovic
+ * Model za tabelu kupac
  */
 
 use CodeIgniter\Model;
@@ -21,11 +14,17 @@ class KupacModel extends Model{
     protected $returnType = 'object';
     protected $allowedFields = ['id_korisnik'];
     
+    //Dohvata kupca sa zadatim id
+    //@param int $id
+    //@return object
     public function dohvati($id) {
         $kupac = $this->where('id_korisnik', $id)->first();
         return $kupac;
     }
     
+    //Dodavanje kupca u bazu.
+    //@param int $id
+    //@return void
     public function dodaj($id) {
         $this->insert(['id_korisnik'=>$id]);
     }
