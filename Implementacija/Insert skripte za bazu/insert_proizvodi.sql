@@ -5,7 +5,7 @@ INSERT INTO `psi`.`proizvod`
 `opis`,
 `id_prodavac`)
 VALUES
-('Bracni krevet',10,'Bracni krevet dimenzija 220x150',53000,6);
+('Bracni krevet',10,53000, 'Bracni krevet dimenzija 220x150',6);
 
 INSERT INTO `psi`.`proizvod`
 (`naziv`,
@@ -23,7 +23,7 @@ INSERT INTO `psi`.`proizvod`
 `opis`,
 `id_prodavac`)
 VALUES
-('Ugaona garnitura',150000,10,'Kozna ugaona garnitura',6);
+('Ugaona garnitura', 10,1 50000, 'Kozna ugaona garnitura',6);
 
 INSERT INTO `psi`.`proizvod`
 (`naziv`,
