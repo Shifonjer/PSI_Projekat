@@ -21,15 +21,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin')?>">Pocetna</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/katalog')?>">Katalog</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/dodavanje')?>">Dodavanje proizvoda</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/korisnici')?>">Korisnici</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/radnje')?>">Radnje</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Admin/about')?>">O nama</a></li>
+                <li class="nav-item"><a class="nav-link" name="pocetna" href="<?php echo site_url('Admin')?>">Pocetna</a></li>
+                <li class="nav-item" ><a class="nav-link" name="katalog" href="<?php echo site_url('Admin/katalog')?>">Katalog</a></li>
+                <li class="nav-item" ><a class="nav-link" name="dodavanje" href="<?php echo site_url('Admin/dodavanje')?>">Dodavanje proizvoda</a></li>
+                <li class="nav-item" ><a class="nav-link" name="korisnici" href="<?php echo site_url('Admin/korisnici')?>">Korisnici</a></li>
+                <li class="nav-item" ><a class="nav-link" name="radnje" href="<?php echo site_url('Admin/radnje')?>">Radnje</a></li>
+                <li class="nav-item" ><a class="nav-link" name="about" href="<?php echo site_url('Admin/about')?>">O nama</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/logout')?>">Logout</a></li>
+                <li class="nav-item" ><a class="nav-link" name="logout" href="<?php echo site_url('Korisnik/logout')?>">Logout</a></li>
             </ul>
         </div>
     </nav>

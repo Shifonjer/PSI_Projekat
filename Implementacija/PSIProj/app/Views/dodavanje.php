@@ -21,8 +21,8 @@
                             echo "'>";
                             echo "<tr><td>{$proizvod->id_proizvod}<input type='hidden' name='id' value='{$proizvod->id_proizvod}'></td>"
                             . "<td>{$proizvod->naziv}</td>"
-                            . "<td>{$proizvod->kolicina}</td>"
-                            . "<td><input type='number' name='kolicina' class='form-control' value='0' min='0'></td>"
+                            . "<td name ='trenutna_kolicina'>{$proizvod->kolicina}</td>"
+                            . "<td><input type='number' name='kolicina' class='form-control' placeholder='0' min='0'></td>"
                             . "<td><input class='btn btn-success' type='submit' name='promeni' value='Promeni'/></td>";
                             echo "</form>";
                         }

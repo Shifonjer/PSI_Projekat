@@ -6,8 +6,8 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h1>Dobrodosli u zamak</h1>
-        <p>Uzivajte u razledanju naseg "Dvorac", nadamo se da cete uz nasu pomoc uspeti da napravite sopstveni
+        <h1 name="naslov">Dobrodosli u zamak</h1>
+        <p name="opis">Uzivajte u razledanju naseg "Dvorca", nadamo se da cete uz nasu pomoc uspeti da napravite sopstveni
         dvorac.</p>
         <p><a class="btn btn-primary btn-lg" href="<?php echo site_url("$kontroler/about")?>" role="button">O nama &raquo;</a></p>
       </div>
