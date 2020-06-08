@@ -23,7 +23,7 @@ INSERT INTO `psi`.`proizvod`
 `opis`,
 `id_prodavac`)
 VALUES
-('Ugaona garnitura', 10,1 50000, 'Kozna ugaona garnitura',6);
+('Ugaona garnitura', 10, 150000, 'Kozna ugaona garnitura',6);
 
 INSERT INTO `psi`.`proizvod`
 (`naziv`,
