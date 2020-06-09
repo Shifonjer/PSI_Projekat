@@ -1,0 +1,124 @@
+{
+  "id": "6389c3bd-94b0-4b40-99f9-eea3f3f2589c",
+  "version": "2.0",
+  "name": "kupovina",
+  "url": "http://localhost:8080/Korisnik",
+  "tests": [{
+    "id": "73931a8f-2284-4952-b774-a65677deec69",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "fb8df0e0-0012-46c2-8202-e50a60740084",
+    "name": "uspesna kupovina",
+    "commands": [{
+      "id": "d4a51b37-9c61-49a7-80f5-9e84303595f8",
+      "comment": "",
+      "command": "open",
+      "target": "/Korisnik/katalog",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b631cc2f-0c5a-43b7-a020-581c3cac8f58",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1328x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15946d71-6300-4286-a897-bb0e77ce513f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Kupi",
+      "targets": [
+        ["linkText=Kupi", "linkText"],
+        ["css=tr:nth-child(5) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Kupi')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/kupi/1']", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Kupi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "82098acc-a6b6-473d-9284-dea15e9d34e5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Korpa",
+      "targets": [
+        ["linkText=Korpa", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Korpa')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/korpa']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Korpa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab180f37-db88-40f5-81c4-cae6726a4f00",
+      "comment": "",
+      "command": "click",
+      "target": "name=plati",
+      "targets": [
+        ["name=plati", "name"],
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@name='plati']", "xpath:attributes"],
+        ["xpath=//td[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d5d2c014-4936-4bd7-a399-21b87063a6f9",
+    "name": "nema proizvoda",
+    "commands": [{
+      "id": "ddaf52b2-b0a6-4d21-bb32-d5d18bcd4aba",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "71c2f740-0778-4215-8242-bf658f288781",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1328x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "494416b5-9548-4bb7-b5fc-cd479ecb62ad",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Katalog",
+      "targets": [
+        ["linkText=Katalog", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Katalog')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/katalog']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Katalog')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eaeb7aad-3ab5-46e2-b89a-d49f084c54c4",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.table tr:nth-child(35) > td",
+      "targets": [
+        ["css=.table tr:nth-child(35) > td", "css:finder"],
+        ["xpath=//tr[35]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Proizvod trenutno nije dostupan!')]", "xpath:innerText"]
+      ],
+      "value": "Proizvod trenutno nije dostupan!"
+    }]
+  }],
+  "suites": [{
+    "id": "d3269549-4f53-47fb-a36a-d43ba3530d4f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["73931a8f-2284-4952-b774-a65677deec69"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/Korisnik"],
+  "plugins": []
+}

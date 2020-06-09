@@ -1,0 +1,54 @@
+{
+  "id": "6f1253fa-1210-46d9-a513-6186821935a4",
+  "version": "2.0",
+  "name": "katalog",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "f4bf4e96-f5ad-4275-b175-a78326b09e26",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "a8382df7-0658-4d60-ae50-e3083d4c21fd",
+    "name": "pregled kataloga",
+    "commands": [{
+      "id": "d60c32fc-800a-43bc-bd54-d9710e00e548",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "501cc749-9f46-4d1b-a00e-2b6aec73aaf7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1328x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b9292bc-7ec9-4636-b634-a7221f4e88ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Katalog",
+      "targets": [
+        ["linkText=Katalog", "linkText"],
+        ["css=.mr-auto > .nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Katalog')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Home/katalog']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Katalog')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "66c4a171-9bbc-481e-b834-cbb3c135cdad",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f4bf4e96-f5ad-4275-b175-a78326b09e26"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

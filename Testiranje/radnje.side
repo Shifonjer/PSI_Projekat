@@ -1,0 +1,54 @@
+{
+  "id": "0a91fdd1-71a5-4f88-813b-946275e5819d",
+  "version": "2.0",
+  "name": "radnje",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "42ea88cc-7b91-4edf-80f4-f36dcf93eb54",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "ba8917b3-3328-43ed-84a7-d5cbd6dd4483",
+    "name": "pregled radnji",
+    "commands": [{
+      "id": "2cb6bb44-37a7-4b8e-ba82-ea404ee62c55",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "724e8596-167b-4dc3-bd9b-3c0ed64afde0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1328x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ddde0bc1-7161-4058-89fd-89d42a6f1520",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Radnje",
+      "targets": [
+        ["linkText=Radnje", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Radnje')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Home/radnje']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Radnje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b8424bbb-555a-46d2-b284-cff944603351",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["42ea88cc-7b91-4edf-80f4-f36dcf93eb54"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

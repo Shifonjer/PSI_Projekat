@@ -1,0 +1,54 @@
+{
+  "id": "1131e645-9b1c-4146-b9f1-bfd8f7cf4265",
+  "version": "2.0",
+  "name": "istorija kupovine",
+  "url": "http://localhost:8080/Korisnik",
+  "tests": [{
+    "id": "d4bb13af-5e4d-4e81-86bc-01ee127889a7",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "e1b75ef5-a96b-4219-b878-86f1aa89f9bb",
+    "name": "pregled istorije",
+    "commands": [{
+      "id": "bd52852f-2798-4c17-946c-35aadba9c7a2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fcdaf868-8191-4a2d-a96e-b3ac28d8bb15",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1328x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f20438a-cdb0-471e-a59a-090f09e91aa5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Istorija kupovine",
+      "targets": [
+        ["linkText=Istorija kupovine", "linkText"],
+        ["css=.nav-item:nth-child(4) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Istorija kupovine')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/istorija']", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Istorija kupovine')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "6f7d399a-cd8d-46d2-b8e0-bc83885cf559",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d4bb13af-5e4d-4e81-86bc-01ee127889a7"]
+  }],
+  "urls": ["http://localhost:8080/Korisnik"],
+  "plugins": []
+}
