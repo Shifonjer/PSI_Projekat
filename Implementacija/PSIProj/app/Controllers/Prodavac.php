@@ -56,7 +56,7 @@ class Prodavac extends BaseController
         public function promeni() {
             $proizvodModel = new ProizvodModel();
             $proizvodModel->updateKolicina($this->request->getVar('id'), $this->request->getVar('kolicina'));
-            $this->dodavanje();
+            return redirect()->to(site_url('Prodavac/dodavanje'));
         }
         
         //Funkcija koja prikazuje stranicu radnje 

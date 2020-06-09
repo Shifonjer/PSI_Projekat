@@ -63,7 +63,7 @@ class Admin extends BaseController
         public function promeni() {
             $proizvodModel = new ProizvodModel();
             $proizvodModel->updateKolicina($this->request->getVar('id'), $this->request->getVar('kolicina'));
-            $this->dodavanje();
+            return redirect()->to(site_url('Admin/dodavanje'));
         }
         
         //Funkcija koja prikazuje stranicu radnje 
@@ -102,7 +102,7 @@ class Admin extends BaseController
         public function obrisi($id) {
             $korisnikModel = new KorisnikModel();
             $korisnikModel->where('id_korisnik',$id)->delete();
-            $this->vratiKorisnike();
+            return redirect()->to(site_url('Admin/korisnici'));
         }
         
         //Funkcija koja sluzi za postavljanje korisnika za admina.
@@ -111,7 +111,7 @@ class Admin extends BaseController
         public function postaviAdmina($id) {
             $korisnikModel = new KorisnikModel();
             $korisnikModel->updateStatus($id, true);
-            $this->vratiKorisnike();
+            return redirect()->to(site_url('Admin/korisnici'));
         }
         
         //Funkcija koja sluzi za uklanjanje admina.
@@ -120,7 +120,7 @@ class Admin extends BaseController
         public function ukloniAdmina($id) {
             $korisnikModel = new KorisnikModel();
             $korisnikModel->updateStatus($id, false);
-            $this->vratiKorisnike();
+            return redirect()->to(site_url('Admin/korisnici'));
         }
 }
 

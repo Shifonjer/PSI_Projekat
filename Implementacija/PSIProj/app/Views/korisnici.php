@@ -17,25 +17,32 @@
                             <th></th>
                         </tr>
                         <?php
+                        $cnt = 0;
                         foreach ($korisnici as $korisnik) {
+                            $cnt++;
                             if($korisnik->isAdmin){
                                 $admin = 'Admin';
                             }
                             else {
                                 $admin = 'Nije admin';
                             }
-                            echo "<tr><td>{$korisnik->id_korisnik}</td><td>{$korisnik->ime}</td>"
+                            echo "<tr id='{$korisnik->id_korisnik}'><td>{$korisnik->id_korisnik}</td><td>{$korisnik->ime}</td>"
                             . "<td>{$korisnik->prezime}</td>"
                             . "<td>{$korisnik->email}</td>"
-                            . "<td>{$admin}</td>";
+                            . "<td name='admin'>{$admin}</td>";
                             
                             if($korisnik->isAdmin){
-                                echo "<td>".anchor("Admin/ukloniAdmina/{$korisnik->id_korisnik}", "Ukloni admina")."</td></tr>";
+                                echo "<td><a name='ukloni' class='btn btn-primary btn-lg' href='";
+                                echo site_url("Admin/ukloniAdmina/{$korisnik->id_korisnik}");
+                                echo "' role='button'>Ukloni admina</a></td></tr>";
                             }else{
-                                echo "<td><a class='btn btn-danger btn-lg' href='";
+                                
+                                echo "<td><a name='postavi' class='btn btn-primary btn-lg' href='";
+                                echo site_url("Admin/postaviAdmina/{$korisnik->id_korisnik}");
+                                echo "' role='button'>Postavi za admina</a></td>";
+                                echo "<td><a name='obrisi' class='btn btn-danger btn-lg' href='";
                                 echo site_url("Admin/obrisi/{$korisnik->id_korisnik}");
-                                echo "' role='button'>Obrisi</a></td>";
-                                echo "<td>".anchor("Admin/postaviAdmina/{$korisnik->id_korisnik}", "Postavi za admina")."</td></tr>";
+                                echo "' role='button'>Obrisi</a></td></tr>";
                             }
                         }
                         ?>

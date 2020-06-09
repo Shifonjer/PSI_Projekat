@@ -21,14 +21,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac')?>">Pocetna</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/katalog')?>">Katalog</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/dodavanje')?>">Dodavanje proizvoda</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/radnje')?>">Radnje</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Prodavac/about')?>">O nama</a></li>
+                <li class="nav-item"><a class="nav-link" name="pocetna" href="<?php echo site_url('Prodavac')?>">Pocetna</a></li>
+                <li class="nav-item" ><a class="nav-link" name="katalog" href="<?php echo site_url('Prodavac/katalog')?>">Katalog</a></li>
+                <li class="nav-item" ><a class="nav-link" name="dodavanje" href="<?php echo site_url('Prodavac/dodavanje')?>">Dodavanje proizvoda</a></li>
+                <li class="nav-item" ><a class="nav-link" name="radnje" href="<?php echo site_url('Prodavac/radnje')?>">Radnje</a></li>
+                <li class="nav-item" ><a class="nav-link" name="about" href="<?php echo site_url('Prodavac/about')?>">O nama</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Korisnik/logout')?>">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" name="logout" href="<?php echo site_url('Korisnik/logout')?>">Logout</a></li>
             </ul>
         </div>
     </nav>
